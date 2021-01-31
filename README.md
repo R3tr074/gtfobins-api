@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<br />
+<p align="center">
+  <a href="https://github.com/R3tr074/gtfobins-api">
+    <img src="https://gtfobins.tk/assets/logo.png" alt="Logo" width="150" height="150">
+  </a>
 
-## Getting Started
+  <h3 align="center">Gtfobins API</h3>
 
-First, run the development server:
+  <p align="center">
+    An awesome API to access all gtfobins information!
+    <br />
+    <a href="https://github.com/R3tr074/gtfobins-api"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://gtfobins.tk/docs">View Demo</a>
+    ·
+    <a href="https://github.com/R3tr074/gtfobins-api/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/R3tr074/gtfobins-api/issues">Request Feature</a>
+  </p>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Built With
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+This project was built with TypeScript and an AMAZING framework, the [NextJs](https://nextjs.org/) and hosted on [vercel](http://vercel.com/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [NextJs](https://nextjs.org)
+- [vercel](http://vercel.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<!-- GETTING STARTED -->
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<!-- LICENSE -->
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Distributed under the MIT License. See [`LICENSE`](https://github.com/R3tr074/gtfobins-api/blob/master/LICENSE) for more information.
