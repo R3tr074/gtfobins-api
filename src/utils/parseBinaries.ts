@@ -13,7 +13,7 @@ function parseBinaries(html: string) {
     const binaryName = binName.innerHTML;
     const url = binName
       .getAttribute("href")
-      .replace("/gtfobins", `${process.env.VERCEL_URL}/api/binary`);
+      .replace("/gtfobins", "https://gtfobins.tk/api/binary");
 
     const functions = Array.from(functionList).map(
       (element) => element.innerHTML
